@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
+<?xml version="1.0" encoding="UTF-8"?><!--
  Copyright (C) 2008 ZXing authors
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,10 +20,64 @@
     This Activity is typically full-screen. Therefore we can safely use centerCrop scaling with
     a SurfaceView, without fear of weird artifacts. -->
     <com.example.scantestdemo.DecoratedBarcodeView
+        android:id="@+id/zxing_barcode_scanner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/zxing_barcode_scanner"
         app:zxing_preview_scaling_strategy="centerCrop"
-        app:zxing_use_texture_view="false"/>
+        app:zxing_use_texture_view="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="扫一扫"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:layout_centerInParent="true"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_scan_zxing_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/ic_return_white"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    />
+                <TextView
+                    android:id="@+id/tv_scan_zxing_album"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相册"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25dp"
+                    />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="130dp"
+                android:textSize="14sp"
+                android:text="扫描共享二维码，接收对方发送的设备"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+    </com.example.scantestdemo.DecoratedBarcodeView>
 
 </merge>
